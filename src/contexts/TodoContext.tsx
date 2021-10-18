@@ -26,11 +26,23 @@ const TodoProvider: FC = ({ children }) => {
     setTodos([...todos, todo]);
   };
 
+  const checkCompleted = (selectedTodo: ITodo) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo === selectedTodo) {
+        return { ...todo, completed: !todo.completed };
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
+  };
+
+
   return (
     <TodoContext.Provider
       value={{
         todos,
-        addTodo
+        addTodo,
+        checkCompleted,
       }}
     >
       {children}

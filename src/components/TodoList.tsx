@@ -2,14 +2,19 @@ import React from "react";
 import { useTodo } from "../contexts/TodoContext";
 
 const TodoList = () => {
-  const { todos } = useTodo()!;
+  const { todos, checkCompleted } = useTodo()!;
 
   return (
     <ul className="todo-list">
       {todos.map((item) => (
         <li key={item.id} className={item.completed ? "completed" : ""}>
           <div className="view">
-            <input className="toggle" type="checkbox" />
+            <input
+              className="toggle"
+              type="checkbox"
+              onChange={() => checkCompleted(item)}
+              checked={item.completed}
+            />
             <label>{item.title}</label>
             <button className="destroy"></button>
           </div>
