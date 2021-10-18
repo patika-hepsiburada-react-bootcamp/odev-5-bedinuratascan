@@ -1,24 +1,26 @@
 import { createContext, useState, useContext, FC } from "react";
-import { TodosContextState } from "./types";
+import { ITodo, IContext } from "./types";
 
-const contextDefaultValues: TodosContextState = {
-  todos: [],
-  addTodo: () => {},
-};
-
-export const TodoContext =
-  createContext<TodosContextState>(contextDefaultValues);
+export const TodoContext = createContext<IContext | null>(null);
 
 const TodoProvider: FC = ({ children }) => {
-  const [todos, setTodos] = useState<string[]>(contextDefaultValues.todos);
-
-  const addTodo = (newTodo: string) => setTodos((todos) => [...todos, newTodo]);
+  const [todos, setTodos] = useState<ITodo[]>([
+    {
+      id: "1",
+      title: "text1",
+      completed: false,
+    },
+    {
+      id: "2",
+      title: "text2",
+      completed: false,
+    },
+  ]);
 
   return (
     <TodoContext.Provider
       value={{
         todos,
-        addTodo,
       }}
     >
       {children}
