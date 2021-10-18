@@ -15,6 +15,11 @@ const TodoProvider: FC = ({ children }) => {
       title: "text2",
       completed: false,
     },
+    {
+      id: "3",
+      title: "text3",
+      completed: false,
+    },
   ]);
 
   return (
