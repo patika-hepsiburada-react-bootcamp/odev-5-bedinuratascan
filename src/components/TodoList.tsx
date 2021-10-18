@@ -1,8 +1,7 @@
-import React from "react";
 import { useTodo } from "../contexts/TodoContext";
 
 const TodoList = () => {
-  const { todos, checkCompleted } = useTodo()!;
+  const { todos, checkCompleted, deleteTodo } = useTodo()!;
 
   return (
     <ul className="todo-list">
@@ -16,7 +15,10 @@ const TodoList = () => {
               checked={item.completed}
             />
             <label>{item.title}</label>
-            <button className="destroy"></button>
+            <button
+              className="destroy"
+              onClick={() => deleteTodo(item.id)}
+            ></button>
           </div>
         </li>
       ))}

@@ -36,6 +36,10 @@ const TodoProvider: FC = ({ children }) => {
     setTodos(updatedTodos);
   };
 
+  const deleteTodo = (id: string) => {
+    const filteredTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(filteredTodos);
+  };
 
   return (
     <TodoContext.Provider
@@ -43,6 +47,7 @@ const TodoProvider: FC = ({ children }) => {
         todos,
         addTodo,
         checkCompleted,
+        deleteTodo,
       }}
     >
       {children}
