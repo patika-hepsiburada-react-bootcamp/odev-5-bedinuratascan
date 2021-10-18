@@ -13,7 +13,7 @@ const TodoProvider: FC = ({ children }) => {
     {
       id: "2",
       title: "text2",
-      completed: false,
+      completed: true,
     },
     {
       id: "3",
@@ -22,10 +22,15 @@ const TodoProvider: FC = ({ children }) => {
     },
   ]);
 
+  const addTodo = (todo: ITodo) => {
+    setTodos([...todos, todo]);
+  };
+
   return (
     <TodoContext.Provider
       value={{
         todos,
+        addTodo
       }}
     >
       {children}
