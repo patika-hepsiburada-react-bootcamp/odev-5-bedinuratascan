@@ -1,19 +1,12 @@
 import "./App.css";
-import Header from '../src/components/Header'
-import Main from "./components/Main";
-import MainFooter from "./components/MainFooter";
-import Footer from "./components/Footer";
+import Container from "./components/Container";
+import TodoProvider from "./contexts/TodoContext";
 
 function App() {
   return (
-    <>
-      <section className="todoapp">
-        <Header/>
-        <Main/>
-        <MainFooter/>
-      </section>
-      <Footer/>
-    </>
+    <TodoProvider>
+      <Container />
+    </TodoProvider>
   );
 }
 
