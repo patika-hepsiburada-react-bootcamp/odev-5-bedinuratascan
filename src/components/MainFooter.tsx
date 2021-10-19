@@ -1,7 +1,9 @@
+import { CompletionTriggerKind } from "typescript";
 import { useTodo } from "../contexts/TodoContext";
 
 const MainFooter = () => {
-  const { todos, selectedTab, setSelectedTab } = useTodo()!;
+  const { todos, selectedTab, setSelectedTab, clearCompletedTodos } =
+    useTodo()!;
   const itemsLeft = todos.filter((item) => !item.completed);
 
   return (
@@ -38,7 +40,9 @@ const MainFooter = () => {
           </a>
         </li>
       </ul>
-      <button className="clear-completed">Clear completed</button>
+      <button className="clear-completed" onClick={() => clearCompletedTodos()}>
+        Clear completed
+      </button>
     </footer>
   );
 };

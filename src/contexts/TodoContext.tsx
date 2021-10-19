@@ -22,6 +22,7 @@ const TodoProvider: FC = ({ children }) => {
     },
   ]);
   const [selectedTab, setSelectedTab] = useState<string>("All");
+  const [clearCompleted, setClearCompleted] = useState<ITodo[]>();
 
   const addTodo = (todo: ITodo) => {
     setTodos([...todos, todo]);
@@ -42,6 +43,11 @@ const TodoProvider: FC = ({ children }) => {
     setTodos(filteredTodos);
   };
 
+  const clearCompletedTodos = () => {
+    const uncompletedTodos = todos.filter((item) => !item.completed);
+    setTodos(uncompletedTodos);
+  };
+
   return (
     <TodoContext.Provider
       value={{
@@ -50,7 +56,8 @@ const TodoProvider: FC = ({ children }) => {
         checkCompleted,
         deleteTodo,
         selectedTab,
-        setSelectedTab
+        setSelectedTab,
+        clearCompletedTodos,
       }}
     >
       {children}
