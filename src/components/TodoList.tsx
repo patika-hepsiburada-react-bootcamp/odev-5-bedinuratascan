@@ -1,11 +1,22 @@
 import { useTodo } from "../contexts/TodoContext";
+import { ITodo } from "../contexts/types";
+
+let filteredTodos = Array<ITodo>();
 
 const TodoList = () => {
-  const { todos, checkCompleted, deleteTodo } = useTodo()!;
+  const { todos, checkCompleted, deleteTodo, selectedTab } = useTodo()!;
+
+  if (selectedTab === "All") {
+    filteredTodos = todos;
+  } else if (selectedTab === "Active") {
+    filteredTodos = todos.filter((item) => !item.completed);
+  } else {
+    filteredTodos = todos.filter((item) => item.completed);
+  }
 
   return (
     <ul className="todo-list">
-      {todos.map((item) => (
+      {filteredTodos.map((item) => (
         <li key={item.id} className={item.completed ? "completed" : ""}>
           <div className="view">
             <input
