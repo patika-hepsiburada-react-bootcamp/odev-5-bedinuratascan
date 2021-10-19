@@ -1,4 +1,3 @@
-import { CompletionTriggerKind } from "typescript";
 import { useTodo } from "../contexts/TodoContext";
 
 const MainFooter = () => {

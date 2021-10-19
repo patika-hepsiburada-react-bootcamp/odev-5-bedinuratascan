@@ -22,7 +22,6 @@ const TodoProvider: FC = ({ children }) => {
     },
   ]);
   const [selectedTab, setSelectedTab] = useState<string>("All");
-  const [clearCompleted, setClearCompleted] = useState<ITodo[]>();
 
   const addTodo = (todo: ITodo) => {
     setTodos([...todos, todo]);
