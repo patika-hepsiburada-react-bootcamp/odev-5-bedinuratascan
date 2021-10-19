@@ -9,4 +9,6 @@ export interface IContext {
   addTodo: (todo: ITodo) => void;
   checkCompleted: (selectedTodo: ITodo) => void;
   deleteTodo: (id: string) => void;
+  selectedTab: string;
+  setSelectedTab: React.Dispatch<React.SetStateAction<string>>;
 }
