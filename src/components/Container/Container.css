@@ -1,0 +1,25 @@
+.wrap {
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+.app {
+  padding: 0 0 3px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.app::after {
+  display: block;
+  position: absolute;
+  content: "";
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  border-radius: 0 0 6px 6px;
+  background: #9818D6;
+}

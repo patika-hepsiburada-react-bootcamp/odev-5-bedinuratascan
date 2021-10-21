@@ -1,0 +1,41 @@
+.filter__todos {
+  padding: 0.5rem 1rem;
+}
+
+.filter__todos span {
+  float: right;
+  height: 2rem;
+  line-height: 2rem;
+  color: #9b9ba6;
+}
+
+.filter__todos button {
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.8rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  margin-right: 0.5rem;
+  background-color: transparent;
+  transition: 150ms ease;
+  box-shadow: inset 0 0 0 1px #eeeef6;
+  color: #6f6f77;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.filter__todos button:hover {
+  box-shadow: none;
+  background-color: #eeeef6;
+}
+
+.filter__todos button:active,
+
+.filter__todos button.selected__button {
+  background-color: #eeeef6;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
