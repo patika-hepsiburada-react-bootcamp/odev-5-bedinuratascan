@@ -4,4 +4,4 @@
 
 Todo app built using Typescript
 
-* [Demo](hb-todos-app.netlify.app)
+* [Demo](https://hb-todos-app.netlify.app/)
